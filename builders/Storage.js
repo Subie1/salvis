@@ -24,6 +24,7 @@ class Storage {
         const boxes = this._data.values();
 
         for (const box of boxes) {
+            if (box.has(id)) continue;
             box.set(id, box.options);
         };
     };
