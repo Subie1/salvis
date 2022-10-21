@@ -6,7 +6,6 @@ const storage = new Map();
 class Storage {
 
     constructor(id, options) {
-        if (!id) throw new Error("ID not provided");
         if (storage.has(id)) throw new Error("ID already in use");
 
         this.id = id;
@@ -22,7 +21,6 @@ class Storage {
     };
 
     setup(id) {
-        if (!id) throw new Error("ID already in use");
         const boxes = this._data.values();
 
         for (const box of boxes) {
@@ -31,7 +29,6 @@ class Storage {
     };
 
     box(id, options={}) {
-        if (!id) throw new Error("ID not provided");
         if (this._data.has(id)) return this._data.get(id);
 
         const box = new Box(id, options, this);
@@ -41,7 +38,6 @@ class Storage {
     };
 
     get(id) {
-        if (!id) throw new Error("ID not provided");
         if (!this._data.has(id)) throw new Error("ID not in use");
 
         return this._data.get(id);
