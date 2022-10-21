@@ -26,8 +26,7 @@ class Storage {
         const boxes = this._data.values();
 
         for (const box of boxes) {
-            const def = box.has("default") ? box.get("default") : {};
-            box.set(id, def);
+            box.set(id, box.options);
         };
     };
 
