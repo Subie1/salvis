@@ -1,0 +1,29 @@
+{
+  "name": "salvis",
+  "version": "1.2.2",
+  "description": "A Node Module for saving and loading data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pixel702/salvis.git"
+  },
+  "keywords": [
+    "storage",
+    "data",
+    "save",
+    "saving",
+    "load",
+    "loading",
+    "datastorage",
+    "json"
+  ],
+  "author": "Subie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pixel702/salvis/issues"
+  },
+  "homepage": "https://github.com/Pixel702/salvis#readme"
+}
