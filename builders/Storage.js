@@ -11,6 +11,7 @@ class Storage {
         this.id = id;
         this.autosave = options ? options.autosave ? options.autosave : true : true;
         this.autoload = options ? options.autoload ? options.autoload : true : true;
+        this.prettify = options ? options.prettify ? options.prettify : false : false;
         this.path = options ? options.path ? options.path : path.join(".", ".data", this.id) : path.join(".", ".data", this.id);
         this.suffix = options ? options.suffix ? options.suffix : ".json" : ".json";
         this._data = new Map();
@@ -73,7 +74,8 @@ class Storage {
                 data[key] = box.get(key);
             };
 
-            fs.writeFileSync(path.join(this.path, `${box.id}${this.suffix.startsWith(".") ? this.suffix : `.${this.suffix}`}`), JSON.stringify(data));
+            const raw = this.prettify ? JSON.stringify(data, null, "\t") : JSON.stringify(data);
+            fs.writeFileSync(path.join(this.path, `${box.id}${this.suffix.startsWith(".") ? this.suffix : `.${this.suffix}`}`), raw);
         };
     };
 

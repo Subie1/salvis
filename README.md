@@ -15,11 +15,30 @@ const Salvis = require("salvis");
 
 const storage = new Salvis("player_data");
 
-// const storage = new Salvis("player_data", { path: "./src/storage/players" /* Default ./.data/storage_id */, autosave: false /* Default true */, autoload: false /* Default true */ });
+// const storage = new Salvis("player_data", { path: "./src/storage/players" /* Default ./.data/storage_id */, autosave: false /* Default true */, autoload: false /* Default true */, prettify: true /* Default false */ });
+
 ```
 
 The storage variable is what is used to create
 boxes inside that then you can store data with.
+
+### Storage Options
+
+- Path (Default "./.data/storage_id")
+Changes the path at which the files are stored.
+
+- Autosave (Default "true")
+Saves to the files whenever a modification is
+made to a box.
+
+- Autoload (Default "true")
+Runs `storage.load();` at the initiation of the
+class Salvis.
+
+- Prettify (Default "false")
+Changes the way the files are stored from one
+liner JSON to a pretty version of a more readable
+JSON (Takes more storage space).
 
 ### Boxes
 Boxes are the components that you use to save data
